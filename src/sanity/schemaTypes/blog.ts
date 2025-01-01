@@ -24,6 +24,11 @@ export const blog = {
       title: "Blog image",
       type: "image",
     },
+    {
+      name: "id",
+      title: "id title",
+      type: "number",
+    },
   ],
 };
 

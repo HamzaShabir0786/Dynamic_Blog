@@ -7,3 +7,25 @@
   padding: 0%;
   margin: 0%;
 }
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* .custom-scrollbar::-webkit-scrollbar-track {
+  background: pink; 
+  border-radius: 10px;
+} */
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 20px !important;
+}
+/* 
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: green; 
+  } */
+/* Firefox scrollbar styling */
+.custom-scrollbar {
+  scrollbar-width: thin;
+
+  scrollbar-color: rgb(76, 76, 233) rgb(206, 206, 248); /* Thumb and track colors */
+}
