@@ -13,26 +13,28 @@ interface i {
   description: string;
   price: number;
   image: IImage;
-}export default async function Blog() {
+}
+export default async function Blog() {
   const data: i[] = await getBlogData();
   console.log(data);
   return (
     <div className="border-2 border-red-800 w-[50%]  m-auto rounded-lg">
-      <h1 className="text-center text-[3rem] mt-2">Hello World</h1>
       <div className="flex justify-between  gap-2 ">
         {data.map((items: i, index: number) => {
           return (
             <div
               key={index}
-              className="bg-red-300 rounded-lg  overflow-x-hidden h-[500px] w-[600px] flex flex-col justify-around items-center "
+              className="bg-gray-100 rounded-lg  overflow-x-hidden h-[500px] w-[600px] flex flex-col justify-around items-center "
             >
-              <h1 className="text-[2.6rem] text-green-600">{items.title}</h1>
+              <h1 className="text-[2.6rem] font-bold text-blue-600">
+                {items.title}
+              </h1>
               <Image
-                className="rounded-md h-[200px] w-[400px]"
+                className="rounded-md h-[250px] w-[400px]"
                 src={urlForImage(items.image).url()}
                 alt={items.title}
-                height={200}
-                width={400}
+                height={300}
+                width={300}
               />
 
               <details className="text-[1.2rem] text-green-700">
