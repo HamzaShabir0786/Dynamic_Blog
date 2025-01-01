@@ -2,7 +2,6 @@ import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { Image as IImage } from "sanity";
 import { urlForImage } from "@/sanity/lib/image";
-
 export const getBlogData = async () => {
   const res = await client.fetch(
     `*[_type == "blog"]{title, description,  image}`
@@ -14,8 +13,7 @@ interface i {
   description: string;
   price: number;
   image: IImage;
-}
-export default async function Blog() {
+}export default async function Blog() {
   const data: i[] = await getBlogData();
   console.log(data);
   return (
