@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { Image as IImage } from "sanity";
@@ -14,26 +15,19 @@ interface i {
   price: number;
   image: IImage;
   id: number;
+  index: number;
 }
 export default async function Blog() {
   const data: i[] = await getBlogData();
   console.log(data);
   return (
-    <div className=" w-[96%]  m-auto rounded-lg">
-      <div className="grid grid-cols-3 gap-2 ">
+    <div className=" max-w-[1440px] h-auto py-[40px] m-auto rounded-lg">
+      <div className="grid-div ">
         {data.map((items: i, index: number) => {
           return (
             <div
               key={items.id}
-              className={`bg-gray-400 rounded-lg  overflow-x-hidden h-[400px] w-[500px] flex flex-col  items-center justify-around custom-scrollbar ${
-                items.id === 3
-                  ? "bg-red-100"
-                  : items.id === 2
-                    ? "bg-green-100"
-                    : items.id === 1
-                      ? "bg-yellow-100"
-                      : "bg-pink-900"
-              }`}
+              className={`bg-gray-100 rounded-lg  overflow-x-hidden  flex flex-col  items-center justify-around custom-scrollbar `}
             >
               <h1 className={`text-[2.6rem] font-bold text-blue-600 `}>
                 {items.title}
@@ -46,10 +40,17 @@ export default async function Blog() {
                 height={300}
                 width={300}
               />
-
-              <details className="text-[1.2rem] text-black text-center cursor-pointer">
-                {items.description}
-              </details>
+              <div className="flex items-center gap-12">
+                <details className="text-[1.2rem] text-black text-center  cursor-pointer">
+                  {items.description}
+                </details>
+              </div>
+              <Link
+                href={`${index == 0 ? "/readmore/0index" : index == 1 ? " readmore/1index" : index == 2 ? "/readmore/2ndex" : index == 3 ? "/readmore/3index" : index == 4 ? "/readmore/4index" : index == 5 ? "/readmore/5index" : "/"} `}
+                className="text-white  flex justify-center items-center font-bold w-40 h-12 rounded-xl bg-blue-600 hover:bg-blue-800"
+              >
+                Read More
+              </Link>
             </div>
           );
         })}

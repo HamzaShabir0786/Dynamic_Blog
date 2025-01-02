@@ -10,7 +10,17 @@
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
-
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-track {
+  background: rgb(176, 176, 220);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(48, 48, 229);
+  border-radius: 20px;
+}
 /* .custom-scrollbar::-webkit-scrollbar-track {
   background: pink; 
   border-radius: 10px;
@@ -28,4 +38,22 @@
   scrollbar-width: thin;
 
   scrollbar-color: rgb(76, 76, 233) rgb(206, 206, 248); /* Thumb and track colors */
+}
+.grid-div {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(360px, 1fr));
+  grid-template-rows: repeat(2, minmax(580px, 590px));
+  grid-auto-rows: minmax(580px, 590px);
+  gap: 20px;
+}
+@media (max-width: 1210px) {
+  .grid-div {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
+}
+@media (max-width: 430px) {
+  .grid-div {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
