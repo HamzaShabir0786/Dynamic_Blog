@@ -20,11 +20,11 @@ interface BlogType {
 
 export default async function Blog() {
   const data: BlogType[] = await getBlogData();
-  console.log(data); 
+  console.log(data);
   return (
     <div className="max-w-[1440px] h-auto py-[40px] m-auto rounded-lg">
       <div className="grid-div">
-        {data.map((items: BlogType) => (
+        {data.map((items) => (
           <div
             key={items._id}
             className="bg-gray-100 rounded-lg overflow-x-hidden flex flex-col items-center justify-around custom-scrollbar"
