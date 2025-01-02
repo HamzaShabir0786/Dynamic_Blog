@@ -43,8 +43,8 @@ body::-webkit-scrollbar-thumb {
   height: auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(360px, 1fr));
-  grid-template-rows: repeat(2, minmax(580px, 590px));
-  grid-auto-rows: minmax(580px, 590px);
+  grid-template-rows: repeat(2, minmax(48px, 490px));
+  grid-auto-rows: minmax(480px, 490px);
   gap: 20px;
 }
 @media (max-width: 1210px) {

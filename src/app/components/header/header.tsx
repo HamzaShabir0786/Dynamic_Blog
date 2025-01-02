@@ -7,12 +7,15 @@ export default function Header() {
           Blog
         </h1>
         <ul className="flex text-white gap-6">
-          <Link href={"/"}>
+          <Link className="hover:bg-blue-700 p-3 rounded-lg" href={"/"}>
             <li>Home</li>
           </Link>
-          <a href={"https://hamzah.vercel.app/"} target="_blank">
+          <Link className="hover:bg-blue-700 p-3 rounded-lg"
+            href={"https://hamzah.vercel.app/"}
+            target="_blank"
+          >
             <li>Portfolio</li>
-          </a>
+          </Link>
         </ul>
       </div>
     </>
