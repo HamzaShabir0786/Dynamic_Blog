@@ -19,7 +19,7 @@ export default async function BlogPage({ params }: BlogProps) {
   }
 
   return (
-    <div className="max-w-[800px] m-auto p-8 flex flex-col items-center bg-blue-200">
+    <div className="max-w-[1000px] m-auto p-8 flex flex-col items-center bg-blue-200">
       <h1 className="text-4xl font-bold mb-4 text-blue-600">{blog.title}</h1>
       <Image
         className="rounded-md"
