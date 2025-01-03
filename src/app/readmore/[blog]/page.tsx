@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
+import CommentSection from "@/app/components/comment/page";
 
 interface BlogProps {
   params: {
@@ -18,7 +19,7 @@ export default async function BlogPage({ params }: BlogProps) {
   }
 
   return (
-    <div className="max-w-[800px] m-auto p-8">
+    <div className="max-w-[800px] m-auto p-8 flex flex-col items-center bg-blue-200">
       <h1 className="text-4xl font-bold mb-4 text-blue-600">{blog.title}</h1>
       <Image
         className="rounded-md"
@@ -28,6 +29,9 @@ export default async function BlogPage({ params }: BlogProps) {
         height={400}
       />
       <p className="mt-4 text-lg text-gray-700">{blog.description}</p>
+      <div className=" h-[auto]   mt-8 w-[500px] flex flex-col justify-between items-center">
+        <CommentSection />
+      </div>
     </div>
   );
 }
