@@ -10,7 +10,8 @@ export default function Header() {
           <Link className="hover:bg-blue-700 p-3 rounded-lg" href={"/"}>
             <li>Home</li>
           </Link>
-          <Link className="hover:bg-blue-700 p-3 rounded-lg"
+          <Link
+            className="hover:bg-blue-700 p-3 rounded-lg"
             href={"https://hamzah.vercel.app/"}
             target="_blank"
           >
