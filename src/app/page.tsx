@@ -4,7 +4,7 @@ import { client } from "@/sanity/lib/client";
 import { Image as IImage } from "sanity";
 import { urlForImage } from "@/sanity/lib/image";
 
-export const getBlogData = async () => {
+const getBlogData = async () => {
   const res = await client.fetch(
     `*[_type == "blog"]{title, description, image, _id}`
   );
