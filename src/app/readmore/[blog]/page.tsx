@@ -16,7 +16,6 @@ export default async function BlogPage({ params }: BlogProps) {
   const blog = await client.fetch(`*[_type == "blog" && _id == $id][0]`, {
     id: params.blog,
   });
-
   if (!blog) {
     return <div>Blog not found</div>;
   }
