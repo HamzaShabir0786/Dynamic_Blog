@@ -8,6 +8,7 @@ interface BlogProps {
   params: {
     blog: string;
     Image: IImage;
+    id: number;
   };
 }
 

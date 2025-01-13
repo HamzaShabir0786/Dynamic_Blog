@@ -15,7 +15,7 @@ interface BlogType {
   title: string;
   description: string;
   image: IImage;
-  _id: string;
+  _id: number ;
 }
 
 export default async function Blog() {
