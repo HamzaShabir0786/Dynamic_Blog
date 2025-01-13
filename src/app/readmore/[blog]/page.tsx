@@ -4,17 +4,20 @@ import Image from "next/image";
 import { Image as IImage } from "sanity";
 import CommentSection from "@/app/components/comment/page";
 
+// interface BlogProps {
+//   params: {
+//     blog: string;
+//   };
+// }
 interface BlogProps {
-  params: {
+  params: Promise<{
     blog: string;
-    Image: IImage;
-    id: number;
-  };
+  }>;
 }
 
 export default async function BlogPage({ params }: BlogProps) {
   const blog = await client.fetch(`*[_type == "blog" && _id == $id][0]`, {
-    id: params.blog,
+    id: (await params).blog,
   });
   if (!blog) {
     return <div>Blog not found</div>;
