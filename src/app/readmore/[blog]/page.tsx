@@ -1,11 +1,13 @@
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
+import { Image as IImage } from "sanity";
 import CommentSection from "@/app/components/comment/page";
 
 interface BlogProps {
   params: {
     blog: string;
+    Image: IImage;
   };
 }
 
